@@ -171,6 +171,7 @@ xterm*|rxvt*)
 esac
 PATH=$PATH:~/.local/bin
 
+alias vimdiff='nvim -d'
 alias log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all -n20"
 
 
