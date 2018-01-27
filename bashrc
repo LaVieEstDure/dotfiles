@@ -169,11 +169,12 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-PATH=$PATH:~/.local/bin
 
+PATH=$PATH:~/.local/bin
+export DOTF=~/Desktop/Development/Dotfiles
 alias vimdiff='nvim -d'
 alias log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all -n20"
-
-
+alias anaconda="/home/raghav/anaconda3/bin/python3"
+alias jupyter="ARM9/arm-syntax-vim/jupyter"
 # added by Anaconda3 4.4.0 installer
-#export PATH="/home/raghav/anaconda3/bin:$PATH"
+ export PATH="/home/raghav/anaconda3/bin:$PATH"
