@@ -176,5 +176,8 @@ alias vimdiff='nvim -d'
 alias log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all -n20"
 alias anaconda="/home/raghav/anaconda3/bin/python3"
 alias jupyter="ARM9/arm-syntax-vim/jupyter"
+
+. /home/raghav/.local/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+
 # added by Anaconda3 4.4.0 installer
  export PATH="/home/raghav/anaconda3/bin:$PATH"
