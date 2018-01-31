@@ -184,3 +184,7 @@ alias jupyter="ARM9/arm-syntax-vim/jupyter"
 
 # added by Anaconda3 4.4.0 installer
  export PATH="/home/raghav/anaconda3/bin:$PATH"
+ export PATH="/home/raghav/Desktop/Development/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/:$PATH"
+
+[[ $TERM != "screen" ]] && exec tmux
+
