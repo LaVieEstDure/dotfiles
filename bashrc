@@ -186,5 +186,6 @@ alias jupyter="ARM9/arm-syntax-vim/jupyter"
  export PATH="/home/raghav/anaconda3/bin:$PATH"
  export PATH="/home/raghav/Desktop/Development/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/:$PATH"
 
-[[ $TERM != "screen" ]] && exec tmux
+#[[ $TERM != "screen" ]] && exec tmux
 
+. /home/raghav/torch/install/bin/torch-activate
