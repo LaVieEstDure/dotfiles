@@ -27,6 +27,7 @@ Plug 'junegunn/fzf'
 " (Completion plugin option 1)
 Plug 'roxma/nvim-completion-manager'
 
+"Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
 
 Plug 'bling/vim-bufferline'
 Plug 'tmhedberg/SimpylFold'
@@ -83,7 +84,7 @@ if (empty($TMUX))
 endif
 
 map <F6> :NERDTreeToggle<CR>
-
+map <F7> :Tagbar<CR>
 "Settings for autocomplete
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

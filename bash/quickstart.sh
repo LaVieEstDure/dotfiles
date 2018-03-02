@@ -7,9 +7,15 @@ apt-get -y install ranger
 apt-get -y install tmux
 apt-get -y install htop
 
+# Rust
+
 curl https://sh.rustup.rs -sSf | sh
 source ~/.bashrc
 
 cargo update
 cargo +nightly install clippy
 cargo +nightly install rustfmt-preview
+
+# Haskell
+curl -sSL https://get.haskellstack.org/ | sh
+
