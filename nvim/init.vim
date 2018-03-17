@@ -2,6 +2,7 @@ set encoding=utf-8
 set signcolumn=yes
 "All plugins
 set number
+set relativenumber
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -9,6 +10,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
 Plug 'wagnerf42/vim-clippy'
+Plug 'lervag/vimtex'
+Plug 'neomake/neomake'
+
 "Plug 'prabirshrestha/async.vim'
 "Plug 'prabirshrestha/vim-lsp'
 "Plug 'prabirshrestha/asyncomplete.vim'
@@ -44,7 +48,7 @@ Plug 'rust-lang/rust.vim'
 
 call plug#end()
 set runtimepath+=~/.vim-plugins/LanguageClient-neovim
-
+filetype plugin on
 set hidden
 
 let g:LanguageClient_serverCommands = {
@@ -53,6 +57,14 @@ let g:LanguageClient_serverCommands = {
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
+
+" When writing a buffer.
+call neomake#configure#automake('w')
+" When writing a buffer, and on normal mode changes (after 750ms).
+call neomake#configure#automake('nw', 750)
+" When reading a buffer (after 1s), and when writing.
+call neomake#configure#automake('rw', 1000)
 
 
 "Syntastic
@@ -128,3 +140,6 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = '' 
 set updatetime=500
+
+set tabstop=4 shiftwidth=4 expandtab
+
