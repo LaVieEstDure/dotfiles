@@ -9,7 +9,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
-Plug 'wagnerf42/vim-clippy'
 Plug 'lervag/vimtex'
 Plug 'neomake/neomake'
 
@@ -24,11 +23,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
-
-" (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
-
-" (Completion plugin option 1)
 Plug 'roxma/nvim-completion-manager'
 
 "Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
@@ -36,15 +31,6 @@ Plug 'roxma/nvim-completion-manager'
 Plug 'bling/vim-bufferline'
 Plug 'tmhedberg/SimpylFold'
 Plug 'rust-lang/rust.vim'
-
-
-"if executable('rls')
-"    au User lsp_setup call lsp#register_server({
-"        \ 'name': 'rls',
-"        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-"        \ 'whitelist': ['rust'],
-"        \ })
-"endif
 
 call plug#end()
 set runtimepath+=~/.vim-plugins/LanguageClient-neovim
@@ -60,11 +46,15 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 
 " When writing a buffer.
+" When writing a buffer (no delay).
 call neomake#configure#automake('w')
-" When writing a buffer, and on normal mode changes (after 750ms).
+" When writing a buffer (no delay), and on normal mode changes (after 750ms).
 call neomake#configure#automake('nw', 750)
-" When reading a buffer (after 1s), and when writing.
+" When reading a buffer (after 1s), and when writing (no delay).
 call neomake#configure#automake('rw', 1000)
+" Full config: when writing or reading a buffer, and on changes in insert and
+" normal mode (after 1s; no delay when writing).
+call neomake#configure#automake('nrwi', 500)
 
 
 "Syntastic
@@ -72,11 +62,11 @@ call neomake#configure#automake('rw', 1000)
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_rust_checkers = ['cargo']
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_rust_checkers = ['cargo']
 
 " Colours
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
